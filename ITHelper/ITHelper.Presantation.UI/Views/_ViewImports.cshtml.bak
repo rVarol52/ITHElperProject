@@ -1,0 +1,4 @@
+﻿@using ITHelper.Presantation.UI
+@using ITHelper.Presantation.UI.Models
+@using ITHelper.Infranstrucure.ViewModel.KullaniciViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

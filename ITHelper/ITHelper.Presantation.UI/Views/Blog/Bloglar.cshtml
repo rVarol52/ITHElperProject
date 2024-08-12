@@ -1,0 +1,194 @@
+﻿@using DevExtreme.AspNet;
+@using DevExtreme.AspNet.Mvc.Builders;
+@using DevExtreme.AspNet.Mvc;
+@model ResultBlogViewModel
+
+<div class="p-3 col-md-12 ">
+    <div class="row text-center m-2">
+        <h1>Bloglar</h1>
+    </div>
+    <div class="form-group">
+
+        <label>Etiketler</label>
+        <div class="d-flex align-items-center">
+            <select class="select2bs4" multiple="multiple" name="SelectedEtiketler" data-placeholder="Etiket Seçiniz" style="width: 100%;" id="slcEtiketler">
+            </select>
+        </div>
+
+    </div>
+
+
+
+    <div class="row" id="blogListe">
+        @(Html.DevExtreme()
+       .List()
+       .ID("blogList")
+       .ItemTemplate(
+           @<text>
+
+<div class="list-group-item">
+       <div class="row">
+             <div class="col px-4">
+                   <div>
+                          <div style="float:right !important"><i class="fa fa-calendar-check"></i> <%- formatDate(OlusturulmaTarihi) %></div>
+                               <br />
+                               <div class="float-right">@Html.Raw("<%- OlusturanKullaniciAdi %>") @Html.Raw("<%- OlusturanKullaniciSoyadi %>")</div>
+                               <h3>@Html.Raw("<%- Baslik %>")</h3>
+                               <p class="mb-2 text-break" style="word-wrap: break-word; white-space: normal;">@Html.Raw("<%- Ozet %>")</p>
+                          </div>
+             </div>
+       </div>
+</div>
+
+
+</text>
+       )
+
+       .DataSource(d => d
+             .Mvc()
+             .Controller("Blog")
+             .LoadAction("BlogList")
+             .Key("BlogID")
+           )
+       .DataSourceOptions(d => d
+             .PageSize(4)
+             //.Sort("calendarDate", true)
+       )
+       .NoDataText("Her hangi bir veri bulunamadı")
+       .NextButtonText("Daha Fazla")
+       .PageLoadingText("Yükleniyor")
+       .PageLoadMode(ListPageLoadMode.NextButton)
+       .Height("auto")
+           .ScrollingEnabled(false)
+       .SearchEnabled(true)
+       .SearchEditorOptions(a=> {
+           a.Placeholder("Bir şeyler yazın");
+       })
+       .SearchExpr(new[] {
+           "Baslik",
+           "Icerik", }
+       )
+       .OnItemClick("onItemClick")
+   )
+    </div>
+ 
+
+</div>
+
+<script>
+    var filtreEtiketler = []
+    function formatDate(dateString) {
+        const options = {
+            year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', hour12: false
+        };
+        return new Date(dateString).toLocaleString('tr-TR', options);
+    }
+
+    function onItemClick(e) {
+        var blogID = e.itemData.BlogID;
+        // Daha fazla işlem yapabilirsiniz, örneğin bir detay sayfasına yönlendirme:
+        window.location.href = '/Blog/BlogDetay/' + blogID;
+    }
+
+    function slcEtiketDoldur() {
+        $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            url: "/Blog/GetEtiketler",/*Target function that will be return result*/
+            //data: { GrupSirketID: GrupSirketID },/*parameter pass data is parameter name param is value */
+            dataType: "json",
+            success: function (data) {
+
+                $.each(data, function (index, item) {
+                    $("#slcEtiketler").append('<option value="' + item.EtiketID + '">' + item.EtiketAdi + '</option>');
+                });
+                //$("#slcEtiketler").select2();
+                //$("#slcEtiketler").select2('val', 0);
+            },
+            error: function (result) {
+                //$("#slcEtiketler").select2();
+                //$("#slcEtiketler").select2('val', 0);
+                //ShowDevNotify('error', "Etiket Bulunamadı.", 4000);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        // Initialize Select2 Elements
+        $('.select2bs4').select2();
+
+        // Initialize Select2 Elements with Bootstrap4 theme
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        });
+
+
+
+        slcEtiketDoldur();
+
+        $('#slcEtiketler').on('change', function () {
+            //var selectedEtiketler = $(this).val();
+            //filtreEtiketler.push($(this).val());
+            //filterBlogsByEtiketler(selectedEtiketler);
+
+            var selectedValues = $(this).val(); // Seçilen değerleri alın
+            //var selectedEtiketler = selectedValues.map(function (value) {
+            //    return { id: parseInt(value) }; // DenemeEtiket modeline uygun şekilde dönüştür
+            //});
+
+            var Etiket = {
+                'id': $('#slcEtiketler').val()
+            };
+            filtreEtiketler.push(Etiket);
+
+            filterBlogsByEtiketler(selectedValues);
+        });
+    });
+
+
+
+
+
+
+    function filterBlogsByEtiketler(selectedEtiketler) {
+        console.log(JSON.stringify(filtreEtiketler));
+        
+        var de = JSON.stringify(selectedEtiketler);
+        $.ajax({
+            type: "GET",
+            url: "/Blog/FilterBlogs",
+            dataType: 'json',
+            traditional: true,
+            contentType: 'application/json; charset=utf-8',
+            data: {
+                etiketler: de
+            }, // selectedEtiketler should be an array of integers
+            success: function (data) {
+
+            console.log("data:", data);
+                var listInstance = $("#blogList").dxList("instance");
+                var newDataSource = new DevExpress.data.DataSource({
+                    load: function () {
+                        return data; // 'data' JSON formatında olduğu için doğrudan döndürülüyor
+                    }
+                });
+
+                listInstance.option("dataSource", newDataSource);
+
+                // Veri kaynağını yeniden yükleyin
+                newDataSource.load();
+                //alert(data);
+            },
+            error: function (result) {
+                alert("Blog yüklenemedi.");
+            }
+        });
+    }
+
+
+</script>
+
+
+
+

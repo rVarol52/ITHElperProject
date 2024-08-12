@@ -1,0 +1,14 @@
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\bin\Debug\net8.0\ITHelper.Infranstrucure.deps.json
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\bin\Debug\net8.0\ITHelper.Infranstrucure.runtimeconfig.json
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\bin\Debug\net8.0\ITHelper.Infranstrucure.dll
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\bin\Debug\net8.0\ITHelper.Infranstrucure.pdb
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.csproj.AssemblyReference.cache
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.AssemblyInfoInputs.cache
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.AssemblyInfo.cs
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.csproj.CoreCompileInputs.cache
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.dll
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\refint\ITHelper.Infranstrucure.dll
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.pdb
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ITHelper.Infranstrucure.genruntimeconfig.cache
+C:\Users\ramazan.varol\Documents\Projeler\ITHelper\ITHelper.Infranstrucure\obj\Debug\net8.0\ref\ITHelper.Infranstrucure.dll

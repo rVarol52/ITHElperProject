@@ -1,0 +1,74 @@
+﻿@model ResultBlogViewModel
+
+<h1>Blog Detay</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Projects Detail</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-md-12 order-2 order-md-1">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="info-box bg-light">
+                            <div class="info-box-content">
+                                <span class="info-box-text text-center text-muted">Oluşturan Kullanıcı</span>
+                                <span class="info-box-number text-center text-muted mb-0">@Model.OlusturanKullaniciAdi @Model.OlusturanKullaniciSoyadi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="info-box bg-light">
+                            <div class="info-box-content">
+                                <span class="info-box-text text-center text-muted">Oluşturma Tarihi</span>
+                                <span class="info-box-number text-center text-muted mb-0">@Model.OlusturulmaTarihi </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="info-box bg-light">
+                            <div class="info-box-content">
+                                <span class="info-box-text text-center text-muted">Görüntülenme Sayısı</span>
+                                <span class="info-box-number text-center text-muted mb-0">@Model.OkunmaSayisi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h4>@Model.Baslik</h4>
+                        <div class="post">
+                            <p>
+                                @Html.Raw(@Model.Icerik)
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="p-2 border rounded" style="max-width: 300px; background-color: #f9f9f9;">
+                    <h5>Etiketler</h5>
+                    <div class="d-flex flex-wrap">
+                        @foreach (var item in Model.BlogEtiktler)
+                        {
+                            <span class="badge badge-secondary m-1">#@item.Etiket.EtiketAdi</span>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>

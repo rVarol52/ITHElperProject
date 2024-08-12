@@ -1,0 +1,284 @@
+﻿@model UpdateBlogViewModel
+
+<h2>Edit Blog</h2>
+
+
+
+@functions {
+    object GetInputAttr(string key, string value)
+    {
+        return new { inputAttr = new Dictionary<string, string>() { { key, value } } };
+    }
+}
+<script>
+    var tabs = [
+        { Name: 'From This Device', Value: ['file'] },
+        { Name: 'From the Web', Value: ['url'] },
+        { Name: 'Both', Value: ['file', 'url'] },
+    ];
+
+
+    var markup = `@Html.Raw(Model.Icerik)`;
+
+    function change_multiline(e) {
+        $("#html-editor")
+            .dxHtmlEditor("instance")
+            .option("toolbar.multiline", e.value);
+    }
+
+    function change_tabs(e) {
+        $("#html-editor")
+            .dxHtmlEditor("instance")
+            .option("imageUpload.tabs", e.value);
+    }
+
+    function editorValueChanged(e) {
+        document.getElementById('html-content').value = e.value;
+    }
+
+
+
+    // Form validation
+    //document.getElementById('blogForm').addEventListener('submit', function (e) {
+    //    var content = document.getElementById('html-content').value;
+    //    var title = document.getElementById('blog-title').value;
+
+    //    if (!content || !title) {
+    //        alert("Başlık ve içerik alanları boş bırakılamaz.");
+    //        e.preventDefault();
+    //    }
+
+    //});
+
+    function slcEtiketDoldur() {
+    $.ajax({
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        url: "/Blog/GetEtiketler",/*Target function that will be return result*/
+        //data: { GrupSirketID: GrupSirketID },/*parameter pass data is parameter name param is value */
+        dataType: "json",
+        success: function (data) {
+
+            $.each(data, function (index, item) {
+                $("#slcEtiketler").append('<option value="' + item.EtiketID + '">' + item.EtiketAdi + '</option>');
+            });
+            //$("#slcEtiketler").select2();
+            //$("#slcEtiketler").select2('val', 0);
+        },
+        error: function (result) {
+            //$("#slcEtiketler").select2();
+            //$("#slcEtiketler").select2('val', 0);
+            ShowDevNotify('error', "Etiket Bulunamadı.", 4000);
+        }
+    });
+}
+
+$(document).ready(function () {
+    // Initialize Select2 Elements
+    console.log("sayfa yüklendi");
+    $('.select2bs4').select2();
+
+    // Initialize Select2 Elements with Bootstrap4 theme
+    $('.select2bs4').select2({
+        theme: 'bootstrap4'
+    });
+
+    //slcEtiketDoldur();
+
+    $('#save-etiket').click(function () {
+        var etiketAdi = $('#modal-etiket-adi').val();
+
+         $.ajax({
+            url: '@Url.Action("AddEtiket", "Blog")',
+            type: 'POST',
+            data: { EtiketAdi: etiketAdi },
+            success: function (result) {
+                if (result) {
+                    // Etiket başarıyla eklendiğinde yapılacak işlemler
+
+                    var newOption = new Option(result.EtiketAdi, result.EtiketID, true, true);
+                    $('#slcEtiketler').append(newOption).trigger('change');
+
+                    //slcEtiketDoldur();
+
+                    $('#btnModalClose').click();
+
+                    // Modal input alanını temizle
+                    $('#modal-etiket-adi').val('');
+                    alert('Etiket başarıyla eklendi.');
+                }
+            },
+        error: function (xhr, status, error) {
+            alert('Bir hata oluştu: ' + error);
+        }
+    });
+ });
+
+});
+
+
+</script>
+<form asp-action="EditBlog" asp-controller="Blog" method="post">
+    @Html.HiddenFor(model => model.BlogID)
+    <div class="form-group">
+        <label for="blog-title">Başlık</label>
+        <input type="text" class="form-control" id="blog-title" name="Baslik" value="@Model.Baslik" placeholder="Başlık girin" required>
+    </div>
+
+    <div class="form-group">
+
+        <label>Etiketler</label>
+        <div class="d-flex align-items-center">
+            <select class="select2bs4" multiple="multiple" name="SelectedEtiketler" data-placeholder="Etiket Seçiniz" style="width: 95%;" id="slcEtiketler">
+                @foreach (var etiket in Model.BlogEtiketler)
+                {
+                    <option selected value="@etiket.EtiketID">@etiket.Etiket.EtiketAdi</option>
+                }
+
+                @foreach (var etiket1 in ViewBag.Etiketler)
+                {
+                    <option value="@etiket1.EtiketID">@etiket1.EtiketAdi</option>
+                }
+
+            </select>
+            <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#modal-default" style="width: 5%;">
+                +
+            </button>
+        </div>
+    </div>
+
+    @(Html.DevExtreme().HtmlEditor()
+    .ID("html-editor")
+    .Height(725)
+    .ImageUpload(imageUpload => imageUpload.Tabs(
+        tabs => {
+            tabs.Add().Name(HtmlEditorImageUploadTab.File);
+            tabs.Add().Name(HtmlEditorImageUploadTab.Url);
+        })
+    )
+    .Value(new JS("markup"))
+    .OnValueChanged("editorValueChanged")
+    .Toolbar(toolbar => toolbar.Items(
+        items => {
+            items.Add().Name(HtmlEditorToolbarItem.Undo);
+
+            items.Add().Name(HtmlEditorToolbarItem.Redo);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add()
+                .Name("size")
+                .AcceptedValues(new[] { "8pt", "10pt", "12pt", "14pt", "18pt", "24pt", "36pt" })
+                .Option("options", GetInputAttr("aria-label", "Font size"));
+
+            items.Add()
+                .Name("font")
+                .AcceptedValues(new[] { "Arial", "Courier New", "Georgia", "Impact", "Lucida Console", "Tahoma", "Times New Roman", "Verdana" })
+                .Option("options", GetInputAttr("aria-label", "Font family"));
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.Bold);
+
+            items.Add().Name(HtmlEditorToolbarItem.Italic);
+
+            items.Add().Name(HtmlEditorToolbarItem.Strike);
+
+            items.Add().Name(HtmlEditorToolbarItem.Underline);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.AlignLeft);
+
+            items.Add().Name(HtmlEditorToolbarItem.AlignCenter);
+
+            items.Add().Name(HtmlEditorToolbarItem.AlignRight);
+
+            items.Add().Name(HtmlEditorToolbarItem.AlignJustify);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.OrderedList);
+
+            items.Add().Name(HtmlEditorToolbarItem.BulletList);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add()
+                .Name("header")
+                .AcceptedValues(new JS("[false, 1, 2, 3, 4, 5]"))
+                .Option("options", GetInputAttr("aria-label", "Header"));
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.Color);
+
+            items.Add().Name(HtmlEditorToolbarItem.Background);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.Link);
+
+            items.Add().Name(HtmlEditorToolbarItem.Image);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.Clear);
+
+            items.Add().Name(HtmlEditorToolbarItem.CodeBlock);
+
+            items.Add().Name(HtmlEditorToolbarItem.Blockquote);
+
+            items.Add().Name(HtmlEditorToolbarItem.Separator);
+
+            items.Add().Name(HtmlEditorToolbarItem.InsertTable);
+
+            items.Add().Name(HtmlEditorToolbarItem.DeleteTable);
+
+            items.Add().Name(HtmlEditorToolbarItem.InsertRowAbove);
+
+            items.Add().Name(HtmlEditorToolbarItem.InsertRowBelow);
+
+            items.Add().Name(HtmlEditorToolbarItem.DeleteRow);
+
+            items.Add().Name(HtmlEditorToolbarItem.InsertColumnLeft);
+
+            items.Add().Name(HtmlEditorToolbarItem.InsertColumnRight);
+
+            items.Add().Name(HtmlEditorToolbarItem.DeleteColumn);
+        })
+    )
+    .MediaResizing(m => m.Enabled(true))
+)
+    <input type="hidden" name="Icerik" id="html-content" value="@Model.Icerik" />
+    <div class="form-group" role="group">
+        <button type="submit" class="btn btn-primary ml-2">Kaydet</button>
+        <a href="~/Blog/Bloglarım/" class="btn btn-danger">İptal</a>
+    </div>
+</form>
+
+
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Etiket Ekle</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="modal-etiket-adi" placeholder="Etiket Adı" class="form-control" />
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" id="btnModalClose" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save-etiket">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+

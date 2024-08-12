@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @if (ViewBag.KullaniciAdi != null)
+    {
+        <h2>Hoşgeldin, @ViewBag.KullaniciAdi!</h2>
+    }
+</div>

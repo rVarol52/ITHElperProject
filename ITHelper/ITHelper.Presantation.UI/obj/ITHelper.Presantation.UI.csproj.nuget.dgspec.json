@@ -1,0 +1,382 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Presantation.UI\\ITHelper.Presantation.UI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.Business\\ITHelper.Application.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.Business\\ITHelper.Application.Business.csproj",
+        "projectName": "ITHelper.Application.Business",
+        "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.Business\\ITHelper.Application.Business.csproj",
+        "packagesPath": "C:\\Users\\ramazan.varol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\NuGet.Config",
+          "C:\\Users\\ramazan.varol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 24.1\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/sgI7m9tdPFuLQRylbE25mJgWbr7UYeXmBctvpYy3GmOng2ffOj/api/": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj": {
+                "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj"
+              },
+              "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj": {
+                "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj",
+        "projectName": "ITHelper.Application.DTO",
+        "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj",
+        "packagesPath": "C:\\Users\\ramazan.varol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\NuGet.Config",
+          "C:\\Users\\ramazan.varol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 24.1\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/sgI7m9tdPFuLQRylbE25mJgWbr7UYeXmBctvpYy3GmOng2ffOj/api/": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj",
+        "projectName": "ITHelper.Infranstrucure",
+        "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj",
+        "packagesPath": "C:\\Users\\ramazan.varol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\NuGet.Config",
+          "C:\\Users\\ramazan.varol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 24.1\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/sgI7m9tdPFuLQRylbE25mJgWbr7UYeXmBctvpYy3GmOng2ffOj/api/": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Presantation.UI\\ITHelper.Presantation.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Presantation.UI\\ITHelper.Presantation.UI.csproj",
+        "projectName": "ITHelper.Presantation.UI",
+        "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Presantation.UI\\ITHelper.Presantation.UI.csproj",
+        "packagesPath": "C:\\Users\\ramazan.varol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Presantation.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\NuGet.Config",
+          "C:\\Users\\ramazan.varol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 24.1\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/sgI7m9tdPFuLQRylbE25mJgWbr7UYeXmBctvpYy3GmOng2ffOj/api/": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.Business\\ITHelper.Application.Business.csproj": {
+                "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.Business\\ITHelper.Application.Business.csproj"
+              },
+              "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj": {
+                "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Application.DTO\\ITHelper.Application.DTO.csproj"
+              },
+              "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj": {
+                "projectPath": "C:\\Users\\ramazan.varol\\Documents\\Projeler\\ITHelper\\ITHelper.Infranstrucure\\ITHelper.Infranstrucure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "DevExpress.AspNetCore.Reporting": {
+              "target": "Package",
+              "version": "[23.2.6, )"
+            },
+            "DevExpress.AspNetCore.RichEdit": {
+              "target": "Package",
+              "version": "[23.2.6, )"
+            },
+            "DevExpress.AspNetCore.Spreadsheet": {
+              "target": "Package",
+              "version": "[23.2.6, )"
+            },
+            "DevExpress.Document.Processor": {
+              "target": "Package",
+              "version": "[23.2.6, )"
+            },
+            "DevExtreme.AspNet.Core": {
+              "target": "Package",
+              "version": "[23.2.6, )"
+            },
+            "DevExtreme.AspNet.Data": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.61, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.AspNetCore.HttpOverrides": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.AspNetCore.Mvc.TagHelpers": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
